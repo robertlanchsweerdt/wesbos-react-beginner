@@ -13,13 +13,16 @@ export default class AddFishForm extends Component {
     // create object
     const fish = {
       name: this.nameRef.current.value,
-      price: parseFloat(this.priceRef.current.value),
+      price: parseFloat(this.priceRef.current.value), // using parseFloat for money
       status: Boolean(this.statusRef.current.value),
       desc: this.descRef.current.value,
       image: this.imageRef.current.value,
     };
 
-    console.log(fish);
+    this.props.addFish(fish);
+
+    // refresh form after submittal
+    e.currentTarget.reset();
   };
 
   render() {
