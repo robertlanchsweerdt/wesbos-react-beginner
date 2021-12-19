@@ -28,8 +28,7 @@ export default class Order extends Component {
     if (fish.status) {
       return (
         <li key={id}>
-          {count} lbs {fish.name}
-          {formatPrice(fish.price * count)}
+          {count} lbs {fish.name}... {formatPrice(fish.price * count)}
         </li>
       );
     } else {
